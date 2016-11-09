@@ -83,7 +83,7 @@ public class _1_2_client implements ActionListener {
         // TODO Auto-generated method stub
         if (e.getSource() == btn_send) {
             try {
-                String s = tf_nhap.getText().replaceAll(" ", "");
+                String s = tf_nhap.getText();
                 outputStream.writeUTF(s);
                 String nhan = inputStream.readUTF();
                 tf_ketqua.setText(nhan);

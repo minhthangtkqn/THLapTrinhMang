@@ -18,7 +18,7 @@ import javax.swing.JFrame;
  *
  * @author TLDs
  */
-public class _1_1_client implements ActionListener {
+public class _2_1_client implements ActionListener {
 
     private static Panel panel_2, pn2, pn3, panel_1;
     private static TextField tf_nhap = new TextField(5);
@@ -34,7 +34,7 @@ public class _1_1_client implements ActionListener {
     private byte[] sendData, receiveData;
     private final int port = 7777;
 
-    public _1_1_client() {
+    public _2_1_client() {
         initGUI();
         initClient();
     }
@@ -92,7 +92,7 @@ public class _1_1_client implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new _1_1_client();
+        new _2_1_client();
     }
 
     @Override

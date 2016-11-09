@@ -11,7 +11,7 @@ import java.net.*;
  *
  * @author TLDs
  */
-public class _1_1_server {
+public class _2_1_server {
 
     private static DatagramSocket socketServer;
     private static byte[] sendData, receiveData;
