@@ -46,6 +46,6 @@ public class _2_4_giaiThuaChanLe {
                 ket_qua *= i;
             }
         }
-        System.out.println("Giai thua cua " + this.n + " la: " + ket_qua);
+        System.out.println( this.n + "!! = " + ket_qua);
     }
 }

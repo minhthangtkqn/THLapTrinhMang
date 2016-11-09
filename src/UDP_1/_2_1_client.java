@@ -31,7 +31,6 @@ public class _2_1_client implements ActionListener {
     private DatagramSocket socket;
     private DatagramPacket sendPacket, receivePacket;
     private InetAddress ip;
-    private byte[] sendData, receiveData;
     private final int port = 7777;
 
     public _2_1_client() {
@@ -43,9 +42,6 @@ public class _2_1_client implements ActionListener {
         try {
             socket = new DatagramSocket();
             ip = InetAddress.getByName("localhost");
-
-            sendData = new byte[1024];
-            receiveData = new byte[1024];
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -122,12 +118,15 @@ public class _2_1_client implements ActionListener {
     private void sendData(String mission) {
         try {
             String s = mission + tf_input.getText().trim();
-            sendData = s.getBytes();
-            sendPacket = new DatagramPacket(sendData, sendData.length, ip, port);
+            sendPacket = new DatagramPacket(s.getBytes(), s.length(), ip, port);
             socket.send(sendPacket);
 
+            tf_result.setText("");
+
+            byte[] receiveData = new byte[1024];
             receivePacket = new DatagramPacket(receiveData, receiveData.length);
             socket.receive(receivePacket);
+
             tf_result.setText(new String(receivePacket.getData()));
         } catch (Exception ex) {
             System.out.println(ex);

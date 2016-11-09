@@ -42,7 +42,7 @@ public class _1_4_tinhTienKaraoke {
         if (sau <= 18) {
             System.out.println("Quy khach phai thanh toan " + giaRe * (sau - truoc) + "  VND");
         } else {
-            System.out.println("Quy khach phai thanh toan " + (giaRe * (18 - truoc) + giaDat * (sau - 18)) + "VND");
+            System.out.println("Quy khach phai thanh toan " + (giaRe * (18 - truoc) + giaDat * (sau - 18)) + "  VND");
         }
     }
 }

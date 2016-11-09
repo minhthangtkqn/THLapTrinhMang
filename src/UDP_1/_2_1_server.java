@@ -21,17 +21,16 @@ public class _2_1_server {
         try {
             socketServer = new DatagramSocket(port);
 
-            sendData = new byte[1024];
-            receiveData = new byte[1024];
-
             String mission = "", inputLine = "", perform = "", resultString = "";
-            DatagramPacket receivePacket, sendPacket;
 
             int clientPort = 0;
             InetAddress address;
 
             while (true) {
-                receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                sendData = new byte[1024];
+                receiveData = new byte[1024];
+
+                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 socketServer.receive(receivePacket);
 
                 clientPort = receivePacket.getPort();
@@ -51,9 +50,9 @@ public class _2_1_server {
                         resultString = "" + perform.split(" ").length;
                         break;
                 }
-
+                System.out.println("Ket qua: " + resultString);
                 sendData = resultString.getBytes();
-                sendPacket = new DatagramPacket(sendData, sendData.length, address, clientPort);
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, address, clientPort);
                 socketServer.send(sendPacket);
             }
         } catch (Exception ex) {

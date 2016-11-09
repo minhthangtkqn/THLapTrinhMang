@@ -16,7 +16,7 @@ public class _2__10_soHoanHaoNhoHon1000 {
     }
 
     public void ketQua() {
-        System.out.println("--------------------------------------------------------");
+        System.out.println("---------------------------");
         System.out.println("CHUONG TRINH IN RA CAC SO HOAN HAO < 1000");
         System.out.print("Danh sach cac so hoan hao < 1000 la: ");
         int S, tmp;

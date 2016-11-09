@@ -136,7 +136,7 @@ public class bai_thuc_hanh_1 {
                     break;
             }
 
-            System.out.println("\nNhan phim bat ky va ENTER de tiep tuc ...");
+            System.out.println("\nGÕ KÝ TỰ BẤT KỲ sau đó NHẤN ENTER để tiếp tục ...");
             scanner.next();
         }
 
