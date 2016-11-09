@@ -18,11 +18,10 @@ public class _3_6_DocFile {
         BufferedReader infile = null;
         String filename = "";
         String inLine;
-
         Scanner scanner = new Scanner(System.in);
 
         try {
-            System.out.print(" Hay nhap vao ten FILE can doc noi dung: ");
+            System.out.println(" Hay nhap vao ten FILE can doc noi dung ");
             filename = scanner.nextLine();
             infile = new BufferedReader(new FileReader(filename));
             inLine = infile.readLine();
@@ -51,3 +50,4 @@ public class _3_6_DocFile {
         }
     }
 }
+

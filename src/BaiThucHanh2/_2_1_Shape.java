@@ -9,25 +9,6 @@ package BaiThucHanh2;
  *
  * @author TLDs
  */
-class Point_1 {
-
-    private double x, y;
-
-    public Point_1(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-}
-
 class Square {
 
     private double width;
@@ -44,25 +25,25 @@ class Square {
 
 class Rectangle extends Square {
 
-    private double length;
+    private double height;
 
-    public Rectangle(double length, double width) {
+    public Rectangle(double height, double width) {
         super(width);
-        this.length = length;
+        this.height = height;
     }
 
-    public double getLength() {
-        return this.length;
+    public double getHeight() {
+        return this.height;
     }
 }
 
-class _2_1_Shape {
+public class _2_1_Shape {
 
     public static void main(String[] args) {
         Square s = new Square(100);
         System.out.println("s.width = " + s.getWidth());
         Rectangle r = new Rectangle(50, 25);
         System.out.println("r.width = " + r.getWidth());
-        System.out.println("r.length = " + r.getLength());
+        System.out.println("r.height = " + r.getHeight());
     }
 }

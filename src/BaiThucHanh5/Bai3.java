@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BaiThucHanh5_Phan2;
+package BaiThucHanh5;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -23,7 +23,7 @@ class ExcuteString2 extends Thread {
     public void run() {
         //standardlize 
         inp = inp.trim();
-        inp = inp.replaceAll("\\s+", " ");
+        inp = inp.replaceAll("  ", " ");
         //split
         String[] temp = inp.split(" ");
 

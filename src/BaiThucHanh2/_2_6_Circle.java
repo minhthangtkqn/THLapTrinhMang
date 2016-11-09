@@ -9,21 +9,59 @@ package BaiThucHanh2;
  *
  * @author TLDs
  */
-public class _2_6_Circle extends Shape_6 {
+class Point {
+
+    int x;
+    int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}
+
+abstract class Shape {
+
+    private Point origin;
+
+    public Point getOrigin() {
+        return origin;
+    }
+
+    public Shape() {
+        origin = new Point(0, 0);
+    }
+
+    public Shape(int x, int y) {
+        origin = new Point(x, y);
+    }
+
+    public Shape(Point o) {
+        origin = o;
+    }
+
+    abstract public void draw();
+}
+
+class Circle extends Shape {
 
     double radius;
 
-    public _2_6_Circle(double rad) {
+    public Circle(double rad) {
         super();
         radius = rad;
     }
 
-    public _2_6_Circle(int x, int y, double rad) {
+    public Circle(int x, int y, double rad) {
         super(x, y);
         radius = rad;
     }
 
-    public _2_6_Circle(Point_6 o, double rad) {
+    public Circle(Point o, double rad) {
         super(o);
         radius = rad;
     }
@@ -32,46 +70,12 @@ public class _2_6_Circle extends Shape_6 {
         System.out.println("Circle@" + getOrigin().toString() + ", rad = " + radius);
     }
 
+}
+
+public class _2_6_Circle {
+
     static public void main(String argv[]) {
-        _2_6_Circle circle = new _2_6_Circle(1.0);
+        Circle circle = new Circle(1.0);
         circle.draw();
     }
-}
-
-class Point_6 {
-
-    int _x;
-    int _y;
-
-    public Point_6(int x, int y) {
-        _x = x;
-        _y = y;
-    }
-
-    public String toString() {
-        return "(" + _x + "," + _y + ")";
-    }
-}
-
-abstract class Shape_6 {
-
-    private Point_6 _origin;
-
-    public Point_6 getOrigin() {
-        return _origin;
-    }
-
-    public Shape_6() {
-        _origin = new Point_6(0, 0);
-    }
-
-    public Shape_6(int x, int y) {
-        _origin = new Point_6(x, y);
-    }
-
-    public Shape_6(Point_6 o) {
-        _origin = o;
-    }
-
-    abstract public void draw();
 }

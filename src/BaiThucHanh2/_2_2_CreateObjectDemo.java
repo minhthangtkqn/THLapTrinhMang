@@ -11,64 +11,59 @@ import java.awt.Point;
  *
  * @author TLDs
  */
-class Rectangle_2 {
+class Rectangle2 {
 
     public int width = 0;
-    public int length = 0;
-
+    public int height = 0;
     public Point origin;
 
-    public Rectangle_2() {
+    // four constructors
+    public Rectangle2() {
         origin = new Point(0, 0);
     }
 
-    public Rectangle_2(Point origin) {
-        this.origin = origin;
+    public Rectangle2(Point p) {
+        origin = p;
     }
 
-    public Rectangle_2(int width, int length) {
-        this(new Point(0, 0), width, length);
+    public Rectangle2(int w, int h) {
+        this(new Point(0, 0), w, h);
     }
 
-    public Rectangle_2(Point point, int w, int len) {
-        this.origin = point;
-        this.width = w;
-        this.length = len;
+    public Rectangle2(Point p, int w, int h) {
+        origin = p;
+        width = w;
+        height = h;
     }
 
+    // a method for moving the rectangle
     public void move(int x, int y) {
         origin.x = x;
         origin.y = y;
     }
 
+    // a method for computing the area of the rectangle
     public int area() {
-        return width * length;
+        return width * height;
     }
-
 }
 
 public class _2_2_CreateObjectDemo {
 
     public static void main(String[] args) {
-        Point ori = new Point(12, 9);
-
-        Rectangle_2 rectangle1 = new Rectangle_2(ori, 10, 20);
-
-        Rectangle_2 rectangle2 = new Rectangle_2(12, 17);
-
-        System.out.println("width  1: " + rectangle1.width);
-        System.out.println("length 1: " + rectangle1.length);
-        System.out.println("dien tich 1: " + rectangle1.area());
-
-        rectangle2.origin = ori;
-
-        System.out.println("rec 2 - X" + rectangle2.origin.x);
-        System.out.println("rec 2 - Y" + rectangle2.origin.y);
-
-        System.out.println("chuyen vi tri");
-        rectangle2.move(10, 10);
-
-        System.out.println("rec 2 - X" + rectangle2.origin.x);
-        System.out.println("rec 2 - Y" + rectangle2.origin.y);
+        // create a point object and two rectangle objects
+        Point origin_one = new Point(23, 94);
+        Rectangle2 rect_one = new Rectangle2(origin_one, 100, 200);
+        Rectangle2 rect_two = new Rectangle2(50, 100);
+        // display rect_one's width, height, and area System.out.println("Width of rect_one: " + rect_one.width); System.out.println("Height of rect_one: " + rect_one.height); System.out.println("Area of rect_one: " + rect_one.area());
+        // set rect_two's position
+        rect_two.origin = origin_one;
+        // display rect_two's position
+        System.out.println("X Position of rect_two: " + rect_two.origin.x);
+        System.out.println("Y Position of rect_two: " + rect_two.origin.y); // move rect_two and display its new position
+        rect_two.move(40, 72);
+        System.out.println("X Position of rect_two: " + rect_two.origin.x);
+        System.out.println("Y Position of rect_two: " + rect_two.origin.y);
     }
 }
+

@@ -9,26 +9,17 @@ package BaiThucHanh2;
  *
  * @author TLDs
  */
-public class _2_5_JavaExample03 {
-
-    public static void main(String args[]) {
-        SubBox obj1 = new SubBox(2, 3, 4, 5);
-        System.out.println(">> The tich 1 = " + obj1.volumeBox());
-        System.out.println(">> Trong luong = " + obj1.weight);
-    }
-}
-
-class Box_2 {
+class Box2 {
 
     int width, height, depth;
 
-    Box_2() {
+    public Box2() {
         width = 0;
         height = 0;
         depth = 0;
     }
 
-    Box_2(int width, int height, int depth) {
+    public Box2(int width, int height, int depth) {
         this.width = width;
         this.height = height;
         this.depth = depth;
@@ -39,24 +30,25 @@ class Box_2 {
     }
 }
 
-class SubBox extends Box {
+class SubBox extends Box2 {
 
     int weight;
 
     SubBox(int width, int height, int depth, int weight) {
-        /* Cach 1
-            this.width = width;
-            this.height = height;
-            this.depth = depth;
-            this.weight = weight;
-         */
-        
-        /* Cach 2 */
         super(width, height, depth);
         this.weight = weight;
     }
 
     public int volumeBox() {
         return width * height * depth;
+    }
+}
+
+public class _2_5_JavaExample03 {
+
+    public static void main(String args[]) {
+        SubBox obj1 = new SubBox(2, 3, 4, 5);
+        System.out.println(">> The tich 1 = " + obj1.volumeBox());
+        System.out.println(">> Trong luong = " + obj1.weight);
     }
 }

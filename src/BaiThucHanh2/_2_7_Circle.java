@@ -11,7 +11,7 @@ import java.awt.Point;
  *
  * @author TLDs
  */
-interface Figure_7 {
+interface Figure {
 
     public void move(Point p) throws Exception;
 
@@ -21,7 +21,7 @@ interface Figure_7 {
     public double PI = 3.14159;
 }
 
-abstract class Shape_7 implements Figure_7 {
+abstract class Shape2 implements Figure {
 
     private Point origin;
 
@@ -29,15 +29,15 @@ abstract class Shape_7 implements Figure_7 {
         return origin;
     }
 
-    public Shape_7() {
+    public Shape2() {
         origin = new Point(0, 0);
     }
 
-    public Shape_7(int x, int y) {
+    public Shape2(int x, int y) {
         origin = new Point(x, y);
     }
 
-    public Shape_7(Point o) {
+    public Shape2(Point o) {
         origin = o;
     }
 
@@ -45,22 +45,22 @@ abstract class Shape_7 implements Figure_7 {
         origin = p;
     }
 }
-
-public class _2_7_Circle extends Shape_7 {
+//Lớp Circe kế thừa từ lớp Shape. 
+class Circle2 extends Shape2 {
 
     double radius;
 
-    public _2_7_Circle(double rad) {
+    public Circle2(double rad) {
         super();
         radius = rad;
     }
 
-    public _2_7_Circle(int x, int y, double rad) {
+    public Circle2(int x, int y, double rad) {
         super(x, y);
         radius = rad;
     }
 
-    public _2_7_Circle(Point o, double rad) {
+    public Circle2(Point o, double rad) {
         super(o);
         radius = rad;
     }
@@ -73,8 +73,12 @@ public class _2_7_Circle extends Shape_7 {
         System.out.println("Circle@" + getOrigin().toString() + ", rad = " + radius);
     }
 
+}
+
+public class _2_7_Circle {
+
     static public void main(String argv[]) {
-        _2_7_Circle circle = new _2_7_Circle(2.0);
+        Circle2 circle = new Circle2(2.0);
         circle.draw();
         circle.move(new Point(1, 1));
         circle.draw();

@@ -9,6 +9,38 @@ package BaiThucHanh2;
  *
  * @author TLDs
  */
+class Box {
+
+    int width, height, depth;
+
+    public Box() {
+        width = 0;
+        height = 0;
+        depth = 0;
+
+    }
+
+    public Box(int width, int height, int depth) {
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+    }
+
+    public Box(int a) {
+        width = height = depth = a;
+    }
+
+    public Box(Box obj) {
+        width = obj.width;
+        height = obj.height;
+        depth = obj.depth;
+    }
+
+    public int volumeBox() {
+        return width * height * depth;
+    }
+}
+
 public class _2_4_JavaExample02 {
 
     public static void main(String args[]) {
@@ -20,37 +52,5 @@ public class _2_4_JavaExample02 {
         System.out.println(">> The tich 2 = " + obj2.volumeBox());
         System.out.println(">> The tich 3 = " + obj3.volumeBox());
         System.out.println(">> The tich 4 = " + obj4.volumeBox());
-    }
-
-}
-
-class Box {
-
-    int width, height, depth;
-
-    Box() {
-        width = 0;
-        height = 0;
-        depth = 0;
-    }
-
-    Box(int width, int height, int depth) {
-        this.width = width;
-        this.height = height;
-        this.depth = depth;
-    }
-
-    Box(int a) {
-        width = height = depth = a;
-    }
-
-    Box(Box obj) {
-        width = obj.width;
-        height = obj.height;
-        depth = obj.depth;
-    }
-
-    public int volumeBox() {
-        return width * height * depth;
     }
 }

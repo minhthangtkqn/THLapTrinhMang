@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BaiThucHanh5_Phan2;
+package BaiThucHanh5;
 
 import BaiThucHanh1._2__13_uocChung_boiChung;
 import java.util.Scanner;
