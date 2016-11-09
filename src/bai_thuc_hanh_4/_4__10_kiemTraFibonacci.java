@@ -52,7 +52,7 @@ public class _4__10_kiemTraFibonacci extends JFrame implements ActionListener {
             try {
                 this.n = Integer.parseInt(textfield_N.getText());
 
-                f1 = 1;
+                f1 = 0;
                 f2 = 1;
 
                 isFibonacci = false;
@@ -79,13 +79,11 @@ public class _4__10_kiemTraFibonacci extends JFrame implements ActionListener {
                 } else {
                     textfield_ketqua.setText(n + " không thuộc dãy số Fibonacci");
                 }
-
             } catch (NumberFormatException numEx) {
                 textfield_ketqua.setText("KHÔNG ĐÚNG ĐỊNH DẠNG SỐ, VUI LÒNG NHẬP LẠI");
             } catch (Exception ex) {
                 textfield_ketqua.setText("ĐÃ CÓ LỖI XẢY RA: " + ex);
             }
-
         }
 
         if (e.getSource() == btn_thoat) {

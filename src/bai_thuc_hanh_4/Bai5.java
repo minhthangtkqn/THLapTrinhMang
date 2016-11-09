@@ -5,58 +5,56 @@
  */
 package bai_thuc_hanh_4;
 
+import java.awt.CheckboxMenuItem;
+import java.awt.Frame;
+import java.awt.Menu;
+import java.awt.MenuBar;
+import java.awt.MenuItem;
+
 /**
+ * Tạo Menu giao diện chương trình
  *
- * @author TLDs
+ * @author zquangu112z
  */
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+class Menudemo extends Frame {
 
-class _4_5_MenuDemo extends Frame {
-
-    public _4_5_MenuDemo(String title) {
+    public Menudemo(String title) {
         super(title);
-        setBackground(Color.gray);
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent we) {
-                System.exit(0);
-            }
-        });
-
-        setSize(400, 300);
-        setLocationRelativeTo(null);
-
+        setBounds(300, 200, 200, 200);
+        //menubar
         MenuBar mb = new MenuBar();
         setMenuBar(mb);
+        //menu File
         Menu file = new Menu("File");
         file.add(new MenuItem("New"));
         file.add(new MenuItem("Open"));
         file.add(new MenuItem("Save"));
         file.add(new MenuItem("New"));
         file.add(new MenuItem(" "));
-
         file.add(new MenuItem("Exit"));
         mb.add(file);
-
+        //menu Edit
         Menu edit = new Menu("Edit");
         edit.add(new MenuItem("Copy"));
         edit.add(new MenuItem("Cut"));
         edit.add(new MenuItem("Paste"));
         edit.add(new MenuItem(" "));
-
+        edit.add(new CheckboxMenuItem("Protected"));
+        mb.add(edit);
+        //menu Option
         Menu sub = new Menu("Option");
         sub.add(new MenuItem("First"));
         sub.add(new MenuItem("Second"));
         sub.add(new MenuItem("Third"));
         edit.add(sub);
 
-        edit.add(new CheckboxMenuItem("Protected"));
-        mb.add(edit);
-        show();
+        setVisible(true);
     }
+}
 
-    public static void main(String args[]) {
-        _4_5_MenuDemo f1 = new _4_5_MenuDemo("Menu Demo");
+public class Bai5 {
+
+    public static void main(String[] args) {
+        new Menudemo("ngublue");
     }
 }

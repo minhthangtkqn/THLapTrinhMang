@@ -149,5 +149,4 @@ public class _4_8_minhHoaTinhToan extends JFrame implements ActionListener {
     public static void main(String[] args) {
         new _4_8_minhHoaTinhToan();
     }
-
 }

@@ -58,7 +58,6 @@ public class _4_9_soNguyenTo extends JFrame implements ActionListener {
             } catch (Exception ex) {
                 textfield_ketqua.setText("ĐÃ CÓ LỖI XẢY RA: " + ex);
             }
-
         }
 
         if (e.getSource() == btn_thoat) {
