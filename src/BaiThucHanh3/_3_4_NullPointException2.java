@@ -16,11 +16,10 @@ public class _3_4_NullPointException2 {
     public static void main(String[] args) {
         try {
             System.out.println(" The length of string s is :" + s.length());
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
-        } 
-        finally {
-            System.out.println("Hello");
+        } finally {
+            System.out.println("Hello!");
         }
     }
 }

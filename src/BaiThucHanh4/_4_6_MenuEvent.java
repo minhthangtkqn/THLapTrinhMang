@@ -20,7 +20,8 @@ class Menudemo2 extends Frame implements ActionListener {
 
     Menudemo2(String title) {
         super(title);
-        setBounds(300, 200, 200, 200);
+        setLocationRelativeTo(null);
+        setSize(300, 300);
 
         //initialize menu
         MenuBar menubar = new MenuBar();
@@ -46,7 +47,7 @@ class Menudemo2 extends Frame implements ActionListener {
         }
 
         //initialize components
-        choose = new Label("Toi da chon: ");
+        choose = new Label("LUA CHON HIEN THI TAI DAY");
         add(choose);
 
         //window events
@@ -59,8 +60,6 @@ class Menudemo2 extends Frame implements ActionListener {
         });
 
         setVisible(true);
-
-//        addMouseListener(this);
     }
 
     @Override
@@ -87,8 +86,7 @@ class Menudemo2 extends Frame implements ActionListener {
 }
 
 public class _4_6_MenuEvent {
-
     public static void main(String args[]) {
-        Menudemo2 f = new Menudemo2("ngublue");
+        Menudemo2 f = new Menudemo2("MENU EVENT");
     }
 }

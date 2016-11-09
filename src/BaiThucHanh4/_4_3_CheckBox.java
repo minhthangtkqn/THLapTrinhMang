@@ -38,9 +38,7 @@ class Frame3 extends Frame {
 }
 
 public class _4_3_CheckBox {
-
     public static void main(String[] args) {
         new Frame3();
-
     }
 }

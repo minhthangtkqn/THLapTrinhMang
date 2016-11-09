@@ -53,8 +53,7 @@ class Menudemo extends Frame {
 }
 
 public class _4_5_Menu {
-
     public static void main(String[] args) {
-        new Menudemo("ngublue");
+        new Menudemo("MENU");
     }
 }

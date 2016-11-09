@@ -49,6 +49,6 @@ class Frame1 extends Frame {
 public class _4_1_Button {
 
     public static void main(String[] args) {
-        Frame1 f1 = new Frame1();
+        new Frame1();
     }
 }
