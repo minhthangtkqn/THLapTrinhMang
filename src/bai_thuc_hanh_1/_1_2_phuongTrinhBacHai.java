@@ -15,16 +15,33 @@ public class _1_2_phuongTrinhBacHai {
 
     private double a, b, c;
 
+    public _1_2_phuongTrinhBacHai() {
+        nhap();
+        giaiPT();
+    }
+
     public _1_2_phuongTrinhBacHai(double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
         giaiPT();
     }
+    
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap gia tri a: ");
+        a = scanner.nextDouble();
+
+        System.out.println("Nhap gia tri b: ");
+        b = scanner.nextDouble();
+
+        System.out.println("Nhap gia tri c: ");
+        c = scanner.nextDouble();
+    }
 
     public void giaiPT() {
         if (a == 0) {
-            //bacNhat();
+            //giai phuong trinh bac nhat bx + c = 0
             new _1_1_phuongTrinhBacNhat(b, c);
         } else {
             double delta = (b * b) - (4 * a * c);

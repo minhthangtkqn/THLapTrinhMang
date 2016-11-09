@@ -15,6 +15,11 @@ public class _1_3_soTrungGian {
 
     private int a, b, c;
 
+    public _1_3_soTrungGian() {
+        nhap();
+        ketQua();
+    }
+
     public _1_3_soTrungGian(int a, int b, int c) {
         this.a = a;
         this.b = b;
@@ -22,13 +27,25 @@ public class _1_3_soTrungGian {
         ketQua();
     }
 
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap gia tri a: ");
+        a = scanner.nextInt();
+
+        System.out.println("Nhap gia tri b: ");
+        b = scanner.nextInt();
+
+        System.out.println("Nhap gia tri c: ");
+        c = scanner.nextInt();
+    }
+
     public void ketQua() {
         int trungGian;
-        
+
         trungGian = Integer.max(a, b);
-        if(c > trungGian){
+        if (c > trungGian) {
             System.out.println("So trung gian la: " + trungGian);
-        }else if(c < trungGian){
+        } else if (c < trungGian) {
             System.out.println("So trung gian la: " + Integer.max(c, Integer.min(a, b)));
         }
     }

@@ -15,10 +15,25 @@ public class _1_1_phuongTrinhBacNhat {
 
     private double a, b;
 
+    public _1_1_phuongTrinhBacNhat() {
+        nhap();
+        giaiPT();
+    }
+
     public _1_1_phuongTrinhBacNhat(double a, double b) {
         this.a = a;
         this.b = b;
         giaiPT();
+    }
+
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap gia tri a: ");
+        a = scanner.nextDouble();
+
+        System.out.println("Nhap gia tri b: ");
+        b = scanner.nextDouble();
+
     }
 
     public void giaiPT() {

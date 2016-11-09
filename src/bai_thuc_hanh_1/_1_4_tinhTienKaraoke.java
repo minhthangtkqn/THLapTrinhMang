@@ -21,14 +21,11 @@ public class _1_4_tinhTienKaraoke {
     final int giaDat = 60000;
 
     public _1_4_tinhTienKaraoke() {
+        nhap();
+        thanhToan();
     }
 
-    public _1_4_tinhTienKaraoke(int truoc, int sau) {
-        this.truoc = truoc;
-        this.sau = sau;
-    }
-
-    public void nhap() {
+    private void nhap() {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Nhap gio vao hat: ");
@@ -41,7 +38,7 @@ public class _1_4_tinhTienKaraoke {
         } while (sau <= truoc || sau < 8 || sau > 24);
     }
 
-    public void thanhToan() {
+    private void thanhToan() {
         if (sau <= 18) {
             System.out.println("Quy khach phai thanh toan " + giaRe * (sau - truoc) + "  VND");
         } else {

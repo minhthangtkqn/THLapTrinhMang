@@ -17,11 +17,14 @@ public class _1_5_tinhSoNgayCuaThang {
     private boolean nhuan;
 
     public _1_5_tinhSoNgayCuaThang() {
+        nhap();
+        ketQua();
     }
 
     public _1_5_tinhSoNgayCuaThang(int nam, int thang) {
         this.nam = nam;
         this.thang = thang;
+        ketQua();
     }
 
     public void nhap() {

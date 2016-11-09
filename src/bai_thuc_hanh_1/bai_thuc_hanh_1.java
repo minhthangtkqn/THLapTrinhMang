@@ -54,29 +54,19 @@ public class bai_thuc_hanh_1 {
 
             switch (select) {
                 case "1":
-                    System.out.print("Nhap gia tri a: ");
-                    double a = scanner.nextDouble();
-                    System.out.print("Nhap gia tri b: ");
-                    double b = scanner.nextDouble();
-                    new _1_1_phuongTrinhBacNhat(a, b);
+                    new _1_1_phuongTrinhBacNhat();
                     break;
 
                 case "2":
-//                    System.out.print("Nhap gia tri a: ");
-//                    a = scanner.nextDouble();
-//                    System.out.print("Nhap gia tri b: ");
-//                    double b = scanner.nextDouble();
-                    new _1_2_phuongTrinhBacHai(scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
+                    new _1_2_phuongTrinhBacHai();
                     break;
 
                 case "3":
                     new _1_3_soTrungGian();
                     break;
-
+                    
                 case "4":
-                    _1_4_tinhTienKaraoke tienKara = new _1_4_tinhTienKaraoke();
-                    tienKara.nhap();
-                    tienKara.thanhToan();
+                    new _1_4_tinhTienKaraoke();
                     break;
 
                 case "5":
