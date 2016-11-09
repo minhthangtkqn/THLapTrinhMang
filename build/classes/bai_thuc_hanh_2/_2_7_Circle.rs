@@ -1,0 +1,3 @@
+bai_thuc_hanh_2.Figure_7
+bai_thuc_hanh_2.Shape_7
+bai_thuc_hanh_2._2_7_Circle

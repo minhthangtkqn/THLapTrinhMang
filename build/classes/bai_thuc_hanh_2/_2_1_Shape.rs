@@ -1,0 +1,4 @@
+bai_thuc_hanh_2._2_1_Shape
+bai_thuc_hanh_2.Rectangle
+bai_thuc_hanh_2.Square
+bai_thuc_hanh_2.Point_1
