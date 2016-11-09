@@ -1,6 +1,5 @@
 package TCP_1;
 
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -11,20 +10,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class _1_1_server extends Thread {
+
     private static ServerSocket serverSocket;
     private static Socket socket;
 
     public static void main(String[] args) {
         int port = 7777;
-        
+
         try {
             serverSocket = new ServerSocket(port);
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        
+
         System.out.print("Server is running............");
-        
+
         while (true) {
             try {
                 socket = serverSocket.accept();
@@ -64,7 +64,7 @@ public class _1_1_server extends Thread {
                             processedLine = xuLyThanhChuThuong(perform);
                             break;
                         case "3":
-                            processedLine = "" + demSoKyTu(perform);
+                            processedLine = "" + demSoTu(perform);
                             break;
                     }
                     outputStream.writeUTF(processedLine);
@@ -82,8 +82,8 @@ public class _1_1_server extends Thread {
             return inputLine.toLowerCase();
         }
 
-        private int demSoKyTu(String inputLine) {
-            return inputLine.length();
+        private int demSoTu(String inputLine) {
+            return inputLine.split(" ").length;
         }
 
     }

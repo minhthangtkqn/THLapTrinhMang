@@ -1,15 +1,23 @@
-package TCP_1;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package UDP_1;
 
-import java.awt.GridLayout;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.*;
-import java.awt.*;
-import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.swing.JFrame;
 
+/**
+ *
+ * @author TLDs
+ */
 public class _1_1_client implements ActionListener {
 
     private static Panel panel_2, pn2, pn3, panel_1;
@@ -19,16 +27,31 @@ public class _1_1_client implements ActionListener {
     private static Label lbkq = new Label();
     private static Button btn_UP_CASE, btn_exit, btn_low_case, btn_length;
     private static String s = "";
-    private Socket socket;
-    private DataOutputStream outputStream;
-    private DataInputStream inputStream;
 
-    public _1_1_client() throws UnknownHostException, IOException {
+    private DatagramSocket socket;
+    private DatagramPacket sendPacket, receivePacket;
+    private InetAddress ip;
+    private byte[] sendData, receiveData;
+    private final int port = 7777;
+
+    public _1_1_client() {
         initGUI();
-        initConnection();
+        initClient();
     }
 
-    void initGUI() {
+    private void initClient() {
+        try {
+            socket = new DatagramSocket();
+            ip = InetAddress.getByName("localhost");
+
+            sendData = new byte[1024];
+            receiveData = new byte[1024];
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private void initGUI() {
         JFrame frame = new JFrame("Client");
         frame.setSize(400, 200);
         frame.setLayout(new GridLayout());
@@ -66,64 +89,28 @@ public class _1_1_client implements ActionListener {
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
     }
 
-    private void initConnection() {
-        try {
-            socket = new Socket("127.0.0.1", 7777);
-            outputStream = new DataOutputStream(socket.getOutputStream());
-            inputStream = new DataInputStream(socket.getInputStream());
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
-    }
-
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         new _1_1_client();
-
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         if (e.getSource() == btn_UP_CASE) {
-            try {
-                String s = "1" + tf_nhap.getText().trim();
-                outputStream.writeUTF(s);
-                String nhan = inputStream.readUTF();
-                tf_ketqua.setText(nhan);
-            } catch (Exception ex) {
-                System.out.println(ex);
-            }
+            sendData("1");
         }
 
         if (e.getSource() == btn_low_case) {
-            try {
-                String s = "2" + tf_nhap.getText().trim();
-                outputStream.writeUTF(s);
-                String nhan = inputStream.readUTF();
-                tf_ketqua.setText(nhan);
-            } catch (Exception ex) {
-                System.out.println(ex);
-            }
+            sendData("2");
         }
 
         if (e.getSource() == btn_length) {
-            try {
-                String s = "3" + tf_nhap.getText().trim();
-                outputStream.writeUTF(s);
-                String nhan = inputStream.readUTF();
-                tf_ketqua.setText(nhan);
-            } catch (Exception ex) {
-                System.out.println(ex);
-            }
+            sendData("3");
         }
 
         if (e.getSource() == btn_exit) {
             try {
-                outputStream.close();
-                inputStream.close();
                 socket.close();
                 System.exit(0);
             } catch (Exception ex) {
@@ -131,4 +118,20 @@ public class _1_1_client implements ActionListener {
             }
         }
     }
+
+    private void sendData(String mission) {
+        try {
+            String s = mission + tf_nhap.getText().trim();
+            sendData = s.getBytes();
+            sendPacket = new DatagramPacket(sendData, sendData.length, ip, port);
+            socket.send(sendPacket);
+
+            receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            socket.receive(receivePacket);
+            tf_ketqua.setText(new String(receivePacket.getData()));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
 }

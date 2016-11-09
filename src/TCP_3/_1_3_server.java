@@ -13,7 +13,7 @@ import java.util.*;
  *
  * @author TLDs
  */
-public class _1_3_serverSwing {
+public class _1_3_server {
 
     private static ServerSocket serverSocket = null;
     private static Socket clientSocket = null;
@@ -77,19 +77,19 @@ public class _1_3_serverSwing {
                 while (true) {
                     String chat = inputStream.readUTF();
                     if (chat.contains("/quit")) {
-                        _1_3_serverSwing.threads.remove(clientSocket);
+                        _1_3_server.threads.remove(clientSocket);
                         break;
                     }
                     
-                    for (int i = 0; i < _1_3_serverSwing.threads.size(); i++) {
-                        new DataOutputStream(_1_3_serverSwing.threads.get(i).getOutputStream()).writeUTF(clientName + ": " + chat);
+                    for (int i = 0; i < _1_3_server.threads.size(); i++) {
+                        new DataOutputStream(_1_3_server.threads.get(i).getOutputStream()).writeUTF(clientName + ": " + chat);
                     }
                 }
 
                 //thông báo tới các client khác rằng client này đã thoát
-                for (int i = 0; i < _1_3_serverSwing.threads.size(); i++) {
+                for (int i = 0; i < _1_3_server.threads.size(); i++) {
                     if (threads.get(i) != this.clientSocket) {
-                        new DataOutputStream(_1_3_serverSwing.threads.get(i).getOutputStream()).writeUTF(clientName + " has left room!");
+                        new DataOutputStream(_1_3_server.threads.get(i).getOutputStream()).writeUTF(clientName + " has left room!");
                     }
                 }
 

@@ -122,45 +122,34 @@ public class _4__11_Calculator extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         for (int i = 0; i < btnDial.length; i++) {
             if (e.getSource() == btnDial[i]) {
-                if (isCalculated) {
-                    tfOutput.setText("" + i);
-                    isCalculated = false;
-                } else {
-                    tfOutput.setText(tfOutput.getText() + i);
-                }
+                tfOutput.setText(tfOutput.getText() + i);
             }
         }
 
-        if (e.getSource() == btnPlus && !isCalculated) {
+        if (e.getSource() == btnPlus) {
             tfOutput.setText(tfOutput.getText() + "+");
         }
-        if (e.getSource() == btnMinus && !isCalculated) {
+        if (e.getSource() == btnMinus) {
             tfOutput.setText(tfOutput.getText() + "-");
         }
-        if (e.getSource() == btnMul && !isCalculated) {
+        if (e.getSource() == btnMul) {
             tfOutput.setText(tfOutput.getText() + "*");
         }
-        if (e.getSource() == btnDiv && !isCalculated) {
+        if (e.getSource() == btnDiv) {
             tfOutput.setText(tfOutput.getText() + "/");
         }
 
         if (e.getSource() == btnBackspace) {
-            if (isCalculated) {
-                tfOutput.setText("");
-                isCalculated = false;
-            } else {
-                tfOutput.setText(tfOutput.getText().substring(0, tfOutput.getText().length() - 1));
-            }
+            tfOutput.setText(tfOutput.getText().substring(0, tfOutput.getText().length() - 1));
         }
         if (e.getSource() == btnClear) {
-            tfOutput.setText("");
+            tfOutput.setText("0");
         }
         if (e.getSource() == btnExecute) {
-            String result = tinhToanBieuThucHauTo(chuyenSangDangHauTo(tfOutput.getText()));
+            String result = tinhToanBieuThucHauTo(chuyenSangDangHauTo("0" + tfOutput.getText()));
 
             if (result != null) {
                 tfOutput.setText(result);
-                isCalculated = true;
             }
         }
     }
@@ -172,7 +161,7 @@ public class _4__11_Calculator extends JFrame implements ActionListener {
         String number = "";
 
         //kiểm tra nếu ký tự bắt đầu hoặc kết thúc là toán tử
-        if (isOperator(inputLine.charAt(0)) || isOperator(inputLine.charAt(inputLine.length() - 1))) {
+        if (isOperator(inputLine.charAt(inputLine.length() - 1))) {
             System.out.println("return null");
             return null;
         }
@@ -181,7 +170,7 @@ public class _4__11_Calculator extends JFrame implements ActionListener {
             char c = inputLine.charAt(i);
 
             //nếu c là số
-            if (isNumber(c)) {
+            if (!isOperator(c)) {
                 //ghép các chữ số liền nhau thành một số
                 number = number + c;
 

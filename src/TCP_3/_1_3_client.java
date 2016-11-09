@@ -17,7 +17,7 @@ import javax.swing.*;
  *
  * @author TLDs
  */
-public class _1_3_clientSwing extends JFrame {
+public class _1_3_client extends JFrame {
     
     private JButton btnSend, btnExit;
     private JLabel lbMessagesArea, lbChatField;
@@ -30,7 +30,7 @@ public class _1_3_clientSwing extends JFrame {
     
     private static boolean isClosed = false;
     
-    public _1_3_clientSwing() {
+    public _1_3_client() {
         initGUI();
         initClient();
     }
@@ -93,7 +93,7 @@ public class _1_3_clientSwing extends JFrame {
                     inputStream.close();
                     outputStream.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(_1_3_clientSwing.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(_1_3_client.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 System.exit(0);
             }
@@ -153,7 +153,7 @@ public class _1_3_clientSwing extends JFrame {
     }
     
     public static void main(String[] args) {
-        new _1_3_clientSwing();
+        new _1_3_client();
     }
     
 }
