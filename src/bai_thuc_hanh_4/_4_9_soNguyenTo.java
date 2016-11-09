@@ -8,6 +8,7 @@ package bai_thuc_hanh_4;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigInteger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,8 +23,7 @@ public class _4_9_soNguyenTo extends JFrame implements ActionListener {
     private JLabel label_nhap_n, label_ketqua, LICENSE;
     private JTextField textfield_N, textfield_ketqua;
     private JButton btn_tim, btn_reset, btn_thoat;
-    private int n, tmp;
-    private boolean isNguyenTo;
+    private BigInteger n;
 
     public _4_9_soNguyenTo() {
         super("IN RA CÁC SỐ NGUYÊN TỐ NHỎ HƠN HOẶC BẰNG N");
@@ -46,19 +46,10 @@ public class _4_9_soNguyenTo extends JFrame implements ActionListener {
             textfield_ketqua.setText("");
 
             try {
-                this.n = Integer.parseInt(textfield_N.getText());
+                n = new BigInteger(textfield_N.getText());
 
-                for (int i = 2; i <= n; i++) {
-                    tmp = (int) Math.sqrt(i);
-                    isNguyenTo = true;
-
-                    while (tmp > 1) {
-                        if (i % tmp == 0) {
-                            isNguyenTo = false;
-                        }
-                        tmp--;
-                    }
-                    if (isNguyenTo) {
+                for (BigInteger i = BigInteger.valueOf(2); i.compareTo(n) != 1; i = i.add(BigInteger.ONE)) {
+                    if (kiemTraNguyenTo(i)) {
                         textfield_ketqua.setText(textfield_ketqua.getText() + " " + i + ",");
                     }
                 }
@@ -77,6 +68,30 @@ public class _4_9_soNguyenTo extends JFrame implements ActionListener {
             textfield_N.setText("");
             textfield_ketqua.setText("");
         }
+    }
+    
+    private boolean kiemTraNguyenTo(BigInteger X) {
+        BigInteger n2 = BigInteger.valueOf(2);
+
+        if (X.compareTo(n2) == 0) {
+            return true;
+        }
+
+        BigInteger[] arr = X.divideAndRemainder(n2);
+
+        if (arr[1].equals(BigInteger.valueOf(0))) {
+            return false;
+        }
+
+        long i = 3;
+        while (X.compareTo(BigInteger.valueOf(i * i)) == 1) {
+            BigInteger[] arr2 = X.divideAndRemainder(BigInteger.valueOf(i));
+            if (arr2[1].equals(BigInteger.ZERO)) {
+                return false;
+            }
+            i += 2;
+        };
+        return true;
     }
 
     private void initWindow() {
