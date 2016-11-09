@@ -16,9 +16,23 @@ public class _2_3_tongThuongGiaiThuaLe {
 
     private int n;
 
+    public _2_3_tongThuongGiaiThuaLe() {
+        nhap();
+        ketQua();
+    }
+
     public _2_3_tongThuongGiaiThuaLe(int n) {
         this.n = n;
         ketQua();
+    }
+
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("Nhap N: ");
+            n = scanner.nextInt();
+        } while (n < 0);
     }
 
     public void ketQua() {

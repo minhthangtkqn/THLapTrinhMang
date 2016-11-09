@@ -13,11 +13,25 @@ import java.util.Scanner;
  */
 public class _2_7_soChinhPhuong {
 
-    private double n;
+    private int n;
 
-    public _2_7_soChinhPhuong(double n) {
+    public _2_7_soChinhPhuong() {
+        nhap();
+        ketQua();
+    }
+
+    public _2_7_soChinhPhuong(int n) {
         this.n = n;
         ketQua();
+    }
+
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("Nhap N: ");
+            n = scanner.nextInt();
+        } while (n <= 0);
     }
 
     public void ketQua() {

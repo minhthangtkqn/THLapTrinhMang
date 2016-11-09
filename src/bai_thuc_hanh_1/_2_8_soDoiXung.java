@@ -16,16 +16,19 @@ public class _2_8_soDoiXung {
     private int n;
 
     public _2_8_soDoiXung() {
+        nhap();
+        ketQua();
     }
 
     public _2_8_soDoiXung(int n) {
         this.n = n;
+        ketQua();
     }
 
     public void nhap() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("--------------------------------------------------------");
+        System.out.println("--------------------");
         System.out.println("CHUONG TRINH KIEM TRA SO DOI XUNG");
 
         do {

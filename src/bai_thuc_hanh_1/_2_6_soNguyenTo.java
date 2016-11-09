@@ -16,8 +16,19 @@ public class _2_6_soNguyenTo {
 
     private BigInteger N;
 
-    public _2_6_soNguyenTo(BigInteger N) {
-        this.N = N;
+    public _2_6_soNguyenTo() {
+        nhap();
+        if (ketQua()) {
+            System.out.println(N + " la so nguyen to!");
+        } else {
+            System.out.println(N + " khong phai so nguyen to!");
+        }
+    }
+
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap gia tri N: ");
+        N = new BigInteger(scanner.nextLine());
     }
 
     public boolean ketQua() {

@@ -16,21 +16,36 @@ public class _2_1_tongThuong {
 
     private int n;
 
+    public _2_1_tongThuong() {
+        nhap();
+        ketQua();
+    }
+
     public _2_1_tongThuong(int n) {
         this.n = n;
         ketQua();
     }
-    
-    public void ketQua(){
+
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("Nhap N: ");
+            n = scanner.nextInt();
+        } while (n < 0);
+    }
+
+    private void ketQua() {
 
         //Tinh Tong
         double S = 0;
         for (int i = 1; i <= n; i++) {
             S += (1.0 / i);
         }
-        
+
         //Xuat gia tri Tong
         DecimalFormat df = new DecimalFormat("####.##");
         System.out.println("Tong cac phan so la: " + df.format(S));
     }
+
 }

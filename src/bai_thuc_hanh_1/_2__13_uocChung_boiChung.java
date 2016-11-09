@@ -15,16 +15,31 @@ public class _2__13_uocChung_boiChung {
 
     private int a, b;
 
+    public _2__13_uocChung_boiChung() {
+        nhap();
+        ketQua();
+    }
+
     public _2__13_uocChung_boiChung(int a, int b) {
         this.a = a;
         this.b = b;
         ketQua();
     }
 
-    public void ketQua() {
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("--------------------------------------------------------");
+        System.out.println("-------------------------------");
         System.out.println("CHUONG TRINH TIM UCLN VA BCNN CUA 2 SO A VA B");
+
+        System.out.println("Nhap gia tri a: ");
+        a = scanner.nextInt();
+
+        System.out.println("Nhap gia tri b: ");
+        b = scanner.nextInt();
+    }
+
+    public void ketQua() {
 
         int BCNN = a * b;
 

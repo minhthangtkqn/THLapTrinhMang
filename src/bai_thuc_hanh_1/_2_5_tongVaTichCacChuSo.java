@@ -15,9 +15,23 @@ public class _2_5_tongVaTichCacChuSo {
 
     private int n;
 
+    public _2_5_tongVaTichCacChuSo() {
+        nhap();
+        ketQua();
+    }
+
     public _2_5_tongVaTichCacChuSo(int n) {
         this.n = n;
         ketQua();
+    }
+
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("Nhap N: ");
+            n = scanner.nextInt();
+        } while (n <= 0);
     }
 
     public void ketQua() {

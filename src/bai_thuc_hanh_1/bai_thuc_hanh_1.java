@@ -40,7 +40,6 @@ public class bai_thuc_hanh_1 {
             System.out.println("12. Kiem tra so chinh phuong");
             System.out.println("13. Kiem tra so doi xung");
             System.out.println("14. In ra cac so nguyen to nho hon hoac bang N");
-            System.out.println("14. In ra cac so nguyen to nho hon hoac bang N");
             System.out.println("15. In ra cac so hoan hao nho hon 1000");
             System.out.println("16. In ra N so Fibonacci dau tien");
             System.out.println("17. Kiem tra N co thuoc day so Fibonacci hay khong?");
@@ -64,79 +63,69 @@ public class bai_thuc_hanh_1 {
                 case "3":
                     new _1_3_soTrungGian();
                     break;
-                    
+
                 case "4":
                     new _1_4_tinhTienKaraoke();
                     break;
 
                 case "5":
-                    _1_5_tinhSoNgayCuaThang soNgay = new _1_5_tinhSoNgayCuaThang();
-                    soNgay.nhap();
-                    soNgay.ketQua();
+                    new _1_5_tinhSoNgayCuaThang();
                     break;
 
-//                case "6":
-//                    _2_1_tongThuong tong = new _2_1_tongThuong();
-//                    tong.nhap();
-//                    tong.ketQua();
-//                    break;
-//                case "7":
-//                    _2_2_tongThuongGiaiThua sum_factorial = new _2_2_tongThuongGiaiThua();
-//                    break;
-//                case "8":
-//                    _2_3_tongThuongGiaiThuaLe tongThuongGiaiThuaLe = new _2_3_tongThuongGiaiThuaLe();
-//                    break;
-//
-//                case "9":
-//                    _2_4_giaiThuaChanLe giaiThuaChanLe = new _2_4_giaiThuaChanLe();
-//                    giaiThuaChanLe.nhap();
-//                    giaiThuaChanLe.ketQua();
-//                    break;
-//
-//                case "10":
-//                    _2_5_tongVaTichCacChuSo letter_sum = new _2_5_tongVaTichCacChuSo();
-//                    letter_sum.nhap();
-//                    letter_sum.ketQua();
-//                    break;
-//                case "11":
-//                    System.out.print("Nhap gia tri N: ");
-//                    new _2_6_soNguyenTo(BigInteger.valueOf(BigInteger.scanner.nextBigInteger());
-//                    break;
+                case "6":
+                    new _2_1_tongThuong();
+                    break;
+
+                case "7":
+                    new _2_2_tongThuongGiaiThua();
+                    break;
+
+                case "8":
+                    new _2_3_tongThuongGiaiThuaLe();
+                    break;
+
+                case "9":
+                    new _2_4_giaiThuaChanLe();
+                    break;
+
+                case "10":
+                    new _2_5_tongVaTichCacChuSo();
+                    break;
+
+                case "11":
+                    new _2_6_soNguyenTo();
+                    break;
+
                 case "12":
-                    System.out.println("Nhap gia tri N: ");
-                    new _2_7_soChinhPhuong(scanner.nextDouble());
+                    new _2_7_soChinhPhuong();
                     break;
 
                 case "13":
-                    _2_8_soDoiXung doiXung = new _2_8_soDoiXung();
-                    doiXung.nhap();
-                    doiXung.ketQua();
+                    new _2_8_soDoiXung();
                     break;
 
-//                case "14":
-//                    System.out.println("Nhap gia tri N: ");
-//                    new _2_9_inSoNguyenTo(scanner.nextInt());
-//                    break;
-//                case "15":
-//                    _2__10_soHoanHaoNhoHon1000 hoanHao = new _2__10_soHoanHaoNhoHon1000();
-//                    hoanHao.ketQua();
-//                    break;
-//
+                case "14":
+                    new _2_9_inSoNguyenTo();
+                    break;
+                    
+                case "15":
+                    new _2__10_soHoanHaoNhoHon1000();
+                    break;
+
                 case "16":
                     System.out.println("Nhap gia tri N: ");
                     new _2__11_nSoFibonacci(scanner.nextInt());
                     break;
-//
+
                 case "17":
                     System.out.println("Nhap gia tri N: ");
                     new _2__12_kiemTraFibonacci(scanner.nextInt());
                     break;
-//                
-//                case "18":
-//                    _2__13_uocChung_boiChung UCLNBCNN = new _2__13_uocChung_boiChung();
-//                    UCLNBCNN.nhap();
-//                    UCLNBCNN.ketQua();
-//                    break;
+
+                case "18":
+                    new _2__13_uocChung_boiChung();
+                    break;
+                    
                 case "0":
                     cont = false;
                     System.out.println("GAME OVER");

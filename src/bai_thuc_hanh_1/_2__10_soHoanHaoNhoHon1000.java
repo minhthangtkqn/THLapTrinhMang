@@ -11,15 +11,11 @@ package bai_thuc_hanh_1;
  */
 public class _2__10_soHoanHaoNhoHon1000 {
 
-    private int n;
-
-    public _2__10_soHoanHaoNhoHon1000(int n) {
-        this.n = n;
+    public _2__10_soHoanHaoNhoHon1000() {
         ketQua();
     }
-    
-    
-    public void ketQua(){
+
+    public void ketQua() {
         System.out.println("--------------------------------------------------------");
         System.out.println("CHUONG TRINH IN RA CAC SO HOAN HAO < 1000");
         System.out.print("Danh sach cac so hoan hao < 1000 la: ");

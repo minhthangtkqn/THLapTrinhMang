@@ -16,9 +16,23 @@ public class _2_4_giaiThuaChanLe {
 
     private int n;
 
+    public _2_4_giaiThuaChanLe() {
+        nhap();
+        ketQua();
+    }
+
     public _2_4_giaiThuaChanLe(int n) {
         this.n = n;
         ketQua();
+    }
+
+    private void nhap() {
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("Nhap N: ");
+            n = scanner.nextInt();
+        } while (n <= 0);
     }
 
     public void ketQua() {

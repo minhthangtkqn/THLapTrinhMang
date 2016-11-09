@@ -17,6 +17,7 @@ public class _4__13_minhHoaItemEvent extends JFrame implements ItemListener, Act
 
     private JLabel label_result, LICENSE;
     private CheckboxGroup checkboxGroup;
+    private Checkbox male, female;
     private Choice choice;
     private List list;
     private JButton btn_thoat;
@@ -38,14 +39,11 @@ public class _4__13_minhHoaItemEvent extends JFrame implements ItemListener, Act
     @Override
     public void itemStateChanged(ItemEvent e) {
         if (e.getSource() == choice) {
-            System.out.println("co su kien choice");
             label_result.setText(e.getItem().toString());
         }
-        if (e.getSource() == checkboxGroup) {
-            System.out.println("co su kien checkBox");
+        if (e.getSource() == male || e.getSource() == female) {
             label_result.setText(e.getItem().toString());
         }
-
         if (e.getSource() == list) {
             label_result.setText(list.getSelectedItem());
         }
@@ -53,9 +51,9 @@ public class _4__13_minhHoaItemEvent extends JFrame implements ItemListener, Act
 
     private void initWindow() {
         checkboxGroup = new CheckboxGroup();
-        Checkbox male = new Checkbox("Male", checkboxGroup, false);
+        male = new Checkbox("Male", checkboxGroup, false);
         male.setBounds(80, 50, 80, 30);
-        Checkbox female = new Checkbox("Female", checkboxGroup, true);
+        female = new Checkbox("Female", checkboxGroup, true);
         female.setBounds(180, 50, 80, 30);
         getContentPane().add(male);
         getContentPane().add(female);
