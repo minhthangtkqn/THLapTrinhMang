@@ -23,12 +23,12 @@ public class _4__10_kiemTraFibonacci extends JFrame implements ActionListener {
     private JLabel label_nhap_n, label_ketqua, LICENSE;
     private JTextField textfield_N, textfield_ketqua;
     private JButton btn_kiemtra, btn_reset, btn_thoat;
-    private int n, f1, f2, tmp;
+    private long n, f1, f2, tmp;
     private boolean isFibonacci;
 
     public _4__10_kiemTraFibonacci() {
         super("KIỂM TRA SỐ THUỘC DÃY FIBONACCI");
-        getContentPane().setPreferredSize(new Dimension(500, 500));
+        getContentPane().setPreferredSize(new Dimension(500, 300));
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -50,7 +50,7 @@ public class _4__10_kiemTraFibonacci extends JFrame implements ActionListener {
             textfield_ketqua.setText("");
 
             try {
-                this.n = Integer.parseInt(textfield_N.getText());
+                this.n = Long.parseLong(textfield_N.getText());
 
                 f1 = 0;
                 f2 = 1;
@@ -134,7 +134,7 @@ public class _4__10_kiemTraFibonacci extends JFrame implements ActionListener {
 
         //bản quyền
         LICENSE = new JLabel("HOÀNG MINH THẮNG - 13TCLC");
-        LICENSE.setBounds(100, 400, 200, 40);
+        LICENSE.setBounds(100, 220, 200, 40);
         getContentPane().add(LICENSE);
     }
 

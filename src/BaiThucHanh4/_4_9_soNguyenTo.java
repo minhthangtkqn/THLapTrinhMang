@@ -27,7 +27,7 @@ public class _4_9_soNguyenTo extends JFrame implements ActionListener {
 
     public _4_9_soNguyenTo() {
         super("IN RA CÁC SỐ NGUYÊN TỐ NHỎ HƠN HOẶC BẰNG N");
-        getContentPane().setPreferredSize(new Dimension(500, 500));
+        getContentPane().setPreferredSize(new Dimension(500, 300));
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -130,7 +130,7 @@ public class _4_9_soNguyenTo extends JFrame implements ActionListener {
 
         //bản quyền
         LICENSE = new JLabel("HOÀNG MINH THẮNG - 13TCLC");
-        LICENSE.setBounds(100, 400, 200, 40);
+        LICENSE.setBounds(100, 220, 200, 40);
         getContentPane().add(LICENSE);
     }
 

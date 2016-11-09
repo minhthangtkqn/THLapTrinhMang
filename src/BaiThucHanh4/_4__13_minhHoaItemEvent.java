@@ -20,11 +20,11 @@ public class _4__13_minhHoaItemEvent extends JFrame implements ItemListener, Act
     private Checkbox male, female;
     private Choice choice;
     private List list;
-    private JButton btn_thoat;
+    private JButton btn_exit;
 
     public _4__13_minhHoaItemEvent() {
         super("MINH HỌA SỰ KIỆN ITEM EVENT");
-        getContentPane().setPreferredSize(new Dimension(500, 500));
+        getContentPane().setPreferredSize(new Dimension(350, 400));
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -82,17 +82,17 @@ public class _4__13_minhHoaItemEvent extends JFrame implements ItemListener, Act
         choice.addItemListener(this);
 
         label_result = new JLabel("THE ITEM IS DISPLAYED HERE!");
-        label_result.setBounds(80, 300, 300, 40);
+        label_result.setBounds(80, 250, 300, 40);
         getContentPane().add(label_result);
 
-        btn_thoat = new JButton("THOÁT");
-        btn_thoat.setBounds(300, 150, 80, 40);
-        getContentPane().add(btn_thoat);
-        btn_thoat.addActionListener(this);
+        btn_exit = new JButton("THOÁT");
+        btn_exit.setBounds(220, 150, 80, 40);
+        getContentPane().add(btn_exit);
+        btn_exit.addActionListener(this);
 
         //bản quyền
         LICENSE = new JLabel("HOÀNG MINH THẮNG - 13TCLC");
-        LICENSE.setBounds(100, 400, 200, 40);
+        LICENSE.setBounds(100, 300, 200, 40);
         getContentPane().add(LICENSE);
     }
 
@@ -102,7 +102,7 @@ public class _4__13_minhHoaItemEvent extends JFrame implements ItemListener, Act
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btn_thoat) {
+        if (e.getSource() == btn_exit) {
             System.exit(0);
         }
     }
