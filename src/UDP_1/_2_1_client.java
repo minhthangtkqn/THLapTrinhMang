@@ -20,11 +20,11 @@ import javax.swing.JFrame;
  */
 public class _2_1_client implements ActionListener {
 
-    private static Panel panel_2, pn2, pn3, panel_1;
-    private static TextField tf_nhap = new TextField(5);
-    private static TextField tf_ketqua = new TextField();
-    private static Label lbnhap = new Label();
-    private static Label lbkq = new Label();
+    private static Panel panel_2, panel_1;
+    private static TextField tf_input = new TextField(5);
+    private static TextField tf_result = new TextField();
+    private static Label lb_input = new Label();
+    private static Label lb_result = new Label();
     private static Button btn_UP_CASE, btn_exit, btn_low_case, btn_length;
     private static String s = "";
 
@@ -56,8 +56,8 @@ public class _2_1_client implements ActionListener {
         frame.setSize(400, 200);
         frame.setLayout(new GridLayout());
 
-        lbnhap.setText("Nhap vao chuoi can xu ly");
-        lbkq.setText("Ket qua");
+        lb_input.setText("Nhap vao chuoi can xu ly");
+        lb_result.setText("Ket qua");
 
         panel_1 = new Panel(new GridLayout(5, 1));
         panel_2 = new Panel(new GridBagLayout());
@@ -73,10 +73,10 @@ public class _2_1_client implements ActionListener {
         panel_2.add(btn_length);
         panel_2.add(btn_exit);
 
-        panel_1.add(lbnhap);
-        panel_1.add(tf_nhap);
-        panel_1.add(lbkq);
-        panel_1.add(tf_ketqua);
+        panel_1.add(lb_input);
+        panel_1.add(tf_input);
+        panel_1.add(lb_result);
+        panel_1.add(tf_result);
         panel_1.add(panel_2);
 
         frame.add(panel_1);
@@ -121,14 +121,14 @@ public class _2_1_client implements ActionListener {
 
     private void sendData(String mission) {
         try {
-            String s = mission + tf_nhap.getText().trim();
+            String s = mission + tf_input.getText().trim();
             sendData = s.getBytes();
             sendPacket = new DatagramPacket(sendData, sendData.length, ip, port);
             socket.send(sendPacket);
 
             receivePacket = new DatagramPacket(receiveData, receiveData.length);
             socket.receive(receivePacket);
-            tf_ketqua.setText(new String(receivePacket.getData()));
+            tf_result.setText(new String(receivePacket.getData()));
         } catch (Exception ex) {
             System.out.println(ex);
         }

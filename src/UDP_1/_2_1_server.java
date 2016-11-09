@@ -24,7 +24,7 @@ public class _2_1_server {
             sendData = new byte[1024];
             receiveData = new byte[1024];
 
-            String mission = "", inputLine = "", perform = "", processedLine = "";
+            String mission = "", inputLine = "", perform = "", resultString = "";
             DatagramPacket receivePacket, sendPacket;
 
             int clientPort = 0;
@@ -42,17 +42,17 @@ public class _2_1_server {
                 perform = inputLine.substring(1, inputLine.length());
                 switch (mission) {
                     case "1":
-                        processedLine = perform.toUpperCase();
+                        resultString = perform.toUpperCase();
                         break;
                     case "2":
-                        processedLine = perform.toLowerCase();
+                        resultString = perform.toLowerCase();
                         break;
                     case "3":
-                        processedLine = "" + perform.split(" ").length;
+                        resultString = "" + perform.split(" ").length;
                         break;
                 }
 
-                sendData = processedLine.getBytes();
+                sendData = resultString.getBytes();
                 sendPacket = new DatagramPacket(sendData, sendData.length, address, clientPort);
                 socketServer.send(sendPacket);
             }
